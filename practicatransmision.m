@@ -3,9 +3,7 @@
 clear all;
 close all;
 
-
 %======================= functions ==============================%
-
 
 function diagramaojo(senal,N,L)
 % representacion del diagrama de ojo
@@ -50,9 +48,9 @@ end
 
 N=10;               % periodo de simbolo
 L=5;                % numero de bits a transmitir
-tipopulso=1;        % 1: pulso dado
+tipopulso=3;        % 1: pulso dado
 EbNo=100 ;          % EbNo en dB
-W=pi/2;             % Ancho de banda del canal
+W=pi/8;             % Ancho de banda del canal
 
 %=================== generacion del pulso =========================
 
@@ -68,6 +66,8 @@ elseif tipopulso == 3   % N/2 +-1 pulse
     pulso (N/2 +1:end) = -1;
 elseif tipopulso == 4   % escala
     pulso = linspace(0, 1, N);
+elseif tipopulso == 5
+    pulso = n/(N-1);
 end;
 
 %=================== calculo de la energia del pulso =============
@@ -140,6 +140,6 @@ plot(Wrad,abs(P)/max(abs(P)));
 grid;
 hold on;
 plot(Wrad,abs(H)/max(abs(H)),'r');
-title('Respuesta en frecuencia del canal H(W) y T.F. del pulso P(W)');
+title('respuesta en frecuencia del canal H(W) y T.F. del pulso P(W)');
 
 waitfor(gcf)

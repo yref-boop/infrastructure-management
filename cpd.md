@@ -34,90 +34,108 @@ de nuevo consultando la información oficial de los componentes, calulamos el co
 consumo total: 108140 W + N * 120
 
 ### distribución escogida
+:x
+notas de practicas de la gente:
+- almacenamiento localizado en el centro mejor 
+
 debido a que decidimos utilizar racks de 42 rack units, se necesitarán 9 racks mínimo para que quepan los componentes, por simetría y para permitir mayor holgura y posibilidad de ampliamiento, decidimos utilizar 10 racks,
 estos racks se dispondrán en 2 filas, formando dos pasillos fríos fuera y uno caliente en el medio
 
 ```
-| 0 | 2 | ir | 4 | ir | 6 | 8 | 9 |
-| 1 | 3 | ir | 5 | ir | 7 |SAI|SAI|
+| 0 | 2 | ir | 4 | 5 | ir | 8 | 10| 11|
+| 1 | 3 | ir | 5 | 7 | ir | 9 |SAI|SAI|
 ```
 
-rack 0:
+rack 0 (lleno):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
 |2|Chasis HPE Synergy 12000 Frame|20|5300|
 |1|Switch Cisco Nexus 3048 |1|120|
-|22|Servidor rack HPE Proliant DL20 |22|6380|
+|18|Servidor rack HPE Proliant DL20 |18|5300|
 |1|Firewall Cisco C8300-1N1S-6T|1|100|
 |1|Router Cisco C8300-1N1S-6T |1|500|
 |1|Switch Cisco Nexus 9316D-GX|1|420|
 
-rack 1:
+rack 1 (lleno):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
 |2|Chasis HPE Synergy 12000 Frame|20|5300|
 |1|Switch Cisco Nexus 3048 |1|120|
-|23|Servidor rack HPE Proliant DL20 |23|6670|
+|18|Servidor rack HPE Proliant DL20 |23|5300|
 |1|Firewall Cisco C8300-1N1S-6T|1|100|
 |1|Router Cisco C8300-1N1S-6T |1|500|
 |1|Switch Cisco Nexus 9316D-GX|1|420|
 
-rack 2:
+rack 2 (90%):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
 |2|Chasis HPE Synergy 12000 Frame|20|5300|
 |1|Switch Cisco Nexus 3048 |1|120|
-|22|Servidor rack HPE Proliant DL20 |22|6380|
+|18|Servidor rack HPE Proliant DL20 |18|5220|
  
-rack 3:
+rack 3 (90%):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
 |2|Chasis HPE Synergy 12000 Frame|20|5300|
 |1|Switch Cisco Nexus 3048 |1|120|
-|23|Servidor rack HPE Proliant DL20 |23|6670|
+|18|Servidor rack HPE Proliant DL20 |18|5220|
  
-rack 4:
+rack 4 (90%):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
 |2|Chasis HPE Synergy 12000 Frame|20|5300|
 |1|Switch Cisco Nexus 3048 |1|120|
-|22|Servidor rack HPE Proliant DL20 |22|6380|
+|18|Servidor rack HPE Proliant DL20 |18|5220|
 
-rack 5:
+rack 5 (90%):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
 |2|Chasis HPE Synergy 12000 Frame|20|5300|
 |1|Switch Cisco Nexus 3048 |1|120|
-|23|Servidor rack HPE Proliant DL20 |23|6670|
+|18|Servidor rack HPE Proliant DL20 |18|5220|
  
-rack 6:
+rack 6 (90%):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
 |2|Chasis HPE Synergy 12000 Frame|20|5300|
 |1|Switch Cisco Nexus 3048 |1|120|
-|22|Servidor rack HPE Proliant DL20 |22|6380|
+|18|Servidor rack HPE Proliant DL20 |18|5220|
  
-rack 7 ():
+rack 7 (90%):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
 |2|Chasis HPE Synergy 12000 Frame|20|5300|
 |1|Switch Cisco Nexus 3048 |1|120|
-|23|Servidor rack HPE Proliant DL20 |23|6670|
- 
-rack 8 (llena):
+|18|Servidor rack HPE Proliant DL20 |18|5220|
+
+rack 8 (90%):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
-|2|Chasis HPE Synergy 12000 Frame|20|5300|
+|1|Chasis HPE Synergy 12000 Frame|20|5300|
+|1|Switch Cisco Nexus 3048 |1|120|
+|18|Servidor rack HPE Proliant DL20 |18|5220|
+
+rack 9 (90%):
+|Unidades|        Elemento     |  RU  | Consumo(W) |
+|--------|---------------------|------|------------|
+|1|Chasis HPE Synergy 12000 Frame|20|5300|
+|1|Switch Cisco Nexus 3048 |1|120|
+|18|Servidor rack HPE Proliant DL20 |18|5220|
+ 
+rack 10 (llena):
+|Unidades|        Elemento     |  RU  | Consumo(W) |
+|--------|---------------------|------|------------|
+|1|Chasis HPE Synergy 12000 Frame|20|5300|
 |2|Driver HPE 3PAR 9459 Storage Node ||-|
 |10|HPE 3PAR 9000 24-disk|20|-|
 |1|Switch Cisco Nexus 3048 |1|120|
 |1|Switch Cisco MDS 9132T|1|650|
 |-|HPE 3PAR 9000 7.68 TB |-|-|
 
-rack 9 (llena):
+rack 11 (llena):
 |Unidades|        Elemento     |  RU  | Consumo(W) |
 |--------|---------------------|------|------------|
-|2|Chasis HPE Synergy 12000 Frame|20|5300|
+|1|Chasis HPE Synergy 12000 Frame|20|5300|
 |2|Driver HPE 3PAR 9459 Storage Node ||-|
 |10|HPE 3PAR 9000 24-disk|20|-|
 |1|Switch Cisco Nexus 3048 |1|120|
@@ -129,7 +147,11 @@ decidimos romper la simetría de las filas por dos motivos:
 - es conveniente tener juntos los racks de almacenamiento
 además, añadimos los switches, 2, añadiendo uno en cada rack dedicado a almacenamiento (8,9)
 
+con esto, obtenemos los siguientes datos:
+- % de RU usadas: ~93%
+- % de RU dedicadas a carga TI: ~83%
 
+(tremendisimo texto de porque asi [leer indicaciones y ver que se fue haciendo])
 
 ### sistema de distribución de energía
 como disponemos de 10 racks que consumen kW y teniendo en cuenta posibles expansiones, el conjunto SAI + baterías escogido es:
