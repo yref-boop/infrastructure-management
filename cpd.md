@@ -1,12 +1,4 @@
-# Diseño de un cpd
-## Tareas a realizar
-1. identificar las dimensiones en rack units de los distintos elementos o cargas TI, distribuir los componentes y proponer refrigeración, preferiblemente modelo pasillo caliente
-2. ethernet o almacenamiento, esquema de red switch de acceso en filas o en racks
-3. sai modular (controladora y baterias), PDU modular por fila
-4. elementos de refrigeracion necesarios y sistema de cerramiento de pasillo caliente
-5. elementos necesarios para implantar sistema de control de accesos, y circuito cerrado de television
-
-## Características del cpd 
+## Características del cpd
 ● 18 Chasis HPE Synergy 12000 Frame (P06011-B21 2650W), cada uno de ellos  con capacidad para:  
     o 6 Power Supplies HPE 2650W Performance Hot Plug Titanium Plus FIO  Power Supply Kit (798096-B21).   
     o 12 HPE Synergy 480 Gen10 Compute Module (871940-B21)  
@@ -27,7 +19,7 @@ gracias a la informacion que aportan los fabricantes podemos calcular el numero 
 18 * 10 + 2 * 1 + 2 * 1 + 2 * 8  + 2 * 2 + 20 * 2 + 2 * 1 + 2 * 1 + 180 * 1 * N
 suma total de rack units: 428  + N  (switches)
 
-### consumo 
+### consumo
 de nuevo consultando la información oficial de los componentes, calulamos el consumo total
 18 * 2650  + 2 * 650 + 2 * 420 + 4900 + 2 * 500 + 2 * 100 + 180 * 290 + N * 120
 
