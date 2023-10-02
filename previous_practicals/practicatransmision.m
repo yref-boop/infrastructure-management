@@ -48,7 +48,7 @@ end
 
 N=10;               % periodo de simbolo
 L=5;                % numero de bits a transmitir
-tipopulso=3;        % 1: pulso dado
+tipopulso=2;        % 1: pulso dado
 EbNo=100 ;          % EbNo en dB
 W=pi/8;             % Ancho de banda del canal
 
