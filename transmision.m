@@ -4,9 +4,9 @@ close all;
 
 %===================  parámetros  ==================================
 
-periodo = 10;           % periodo de simbolo
-longitud = 1000;          % bits a transmitir
-calidad = 10;           % energia bit / ruido (dB)
+periodo = 10;           % N periodo de simbolo
+longitud = 5000;        % L bits a transmitir
+calidad = 20;           % EBNO energia bit / ruido (dB)
 
 tipo = 'rectangular';
 
@@ -16,7 +16,7 @@ tipo = 'rectangular';
 
 %=================== generación del pulso =========================
 
-desplazamiento = 0 : periodo - 1;
+desplazamiento = 0 : periodo - 1;   %n
 pulso = zeros (1, periodo);
 
 
@@ -34,8 +34,8 @@ end;
 
 %=================== energía del pulso ===========================
 
-energia_pulso = sum (abs (pulso).^2);
-energia_bit = energia_pulso;    %para 2PAM
+energia_pulso = sum (abs (pulso).^2);   % Ep
+energia_bit = energia_pulso;            % Eb (para 2PAM)
 
 
 %=================== ruido =======================================
@@ -83,9 +83,7 @@ title('pulso transmitido: p(n)');
 grid;
 
 figure(2)
-plot (desplazamiento : periodo*longitud-1, modular_signal);
-hold on;
 plot (desplazamiento : periodo*longitud-1, received_signal, 'r');
-title ('señal modulada')
+title ('señal modulada');
 
 waitfor(gcf)
