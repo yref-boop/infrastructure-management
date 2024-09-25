@@ -65,4 +65,5 @@ subplot(212)
 %Escriba el codigo para representar la senal recibida
 %utilize title, axis, xlabel e ylabel para ajustarla e identificarla correctamente
 
+waitfor(gcf)
 
