@@ -6,13 +6,25 @@ close all;
 % parámetros
 N=10;   % periodo do símbolo
 L=10;   % bits a mandar
-tipopulso=1;
+tipo = 'serra';
+% rectangular
+% cadrada
+% manchester
+% serra
 
 % creación do pulso
-if tipopulso == 1
-  n=0:N-1;
-  pulso=ones(1,N);
-elseif tipopulso == 2
+n=0:N-1;
+pulso = zeros (1, N);
+if strcmp (tipo, 'rectangular')
+    pulso (:) = 1;
+elseif strcmp (tipo, 'cadrada')
+    pulso (1 : N/2) = 1;
+    pulso (N/2 + 1 : end) = 0;
+elseif strcmp (tipo, 'manchester')
+    pulso (1 :N/2) = 1;
+    pulso (N/2 + 1 : end) = -1;
+elseif strcmp (tipo, 'serra')
+    pulso = linspace (0, 1, N);
 end;
 
 % cálculo da enerxía
