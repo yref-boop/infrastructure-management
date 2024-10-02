@@ -48,14 +48,21 @@ for i=1 : L
 end
 sinal_recibida = sinal_modular + ruido;
 
-% creación da señal recibida
-% señal recibida (transmitida + ruido)
+% filtro adaptado
+pulso_invertido = pulso(N:-1:1);
+ind = 1;
+for k = 1:N:L*N-1
+  sinal_conv = conv(sinal_recibida(k:k+N-1),pulso_invertido);
+  sinal_muest = sinal_conv(N);
+  bits_rec(ind) = sinal_muest <= 0;
+  ind = ind + 1;
+end;
 
 % probabilidade de erro
-% probabilidades teórica e real
+pe_real = mean(bits_rec ~= bits);
+pe_teo = erfc(sqrt(EbNo))/2;
 
 % representación gráfica
-%TODO: separar e parametrizar
 figure(1)
 plot(n,pulso);
 axis([0 N -2 2])
