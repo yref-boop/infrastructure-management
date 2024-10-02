@@ -4,8 +4,9 @@ clear all;
 close all;
 
 % parámetros
-N=10;   % periodo do símbolo
-L=10;   % bits a mandar
+N=10;     % periodo do símbolo
+L=10;     % bits a mandar
+EbNodB=20;  % calidade (enerxia bit / ruido (dB)
 tipo = 'serra';
 % rectangular
 % cadrada
@@ -28,12 +29,24 @@ elseif strcmp (tipo, 'serra')
 end;
 
 % cálculo da enerxía
+Ep = sum(pulso.^2);
+Eb = Ep;
+
+% ruido
+EbNo=10^(EbNodB/10);
+ruido=sqrt((Eb/EbNo)/2)*randn(1,N*L);
 
 % modulación
-bits=rand(1,L) < 0.5;
+bits = rand(1, L) < 0.5;
 % lazo que faga a seguinte asociación:
 %   A > 0 -> bit = 0
 %   A < 0 -> bit = 1
+sinal_modular=[];
+for i=1 : L
+  A = 1-2*bits(i);
+  sinal_modular = [sinal_modular, pulso*A];
+end
+sinal_recibida = sinal_modular + ruido;
 
 % creación da señal recibida
 % señal recibida (transmitida + ruido)
@@ -42,6 +55,7 @@ bits=rand(1,L) < 0.5;
 % probabilidades teórica e real
 
 % representación gráfica
+%TODO: separar e parametrizar
 figure(1)
 plot(n,pulso);
 axis([0 N -2 2])
