@@ -74,10 +74,19 @@ grid;
 
 figure(3)
 subplot(211)
-% representar o sinal transmitido sen ruído (con title, axis, xlabel e ylabel)
-
+plot(sinal_modular);
+axis([0 N*L-1 -2 2])
+xlabel('t(s)')
+ylabel('valor')
+title('sinal modulada');
+grid;
 subplot(212)
-% representar o sinal recibido (con title, axis, xlabel e ylabel)
+plot(sinal_recibida);
+axis([0 N*L-1 -2 2])
+xlabel('t(s)')
+ylabel('valor')
+title('sinal recibida');
+grid;
 
 waitfor(gcf)
 
