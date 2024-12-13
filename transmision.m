@@ -4,10 +4,10 @@ clear all;
 close all;
 
 % parámetros
-N=10;     % periodo do símbolo
-L=10;     % bits a mandar
-EbNodB=20;  % calidade (enerxia bit / ruido (dB)
-tipo = 'serra';
+N=40;     % periodo do símbolo
+L=1000;     % bits a mandar
+EbNodB=3;  % calidade (enerxia bit / ruido (dB)
+tipo = 'examen';
 % rectangular
 % cadrada
 % manchester
@@ -26,14 +26,17 @@ elseif strcmp (tipo, 'manchester')
     pulso (N/2 + 1 : end) = -1;
 elseif strcmp (tipo, 'serra')
     pulso = linspace (0, 1, N);
+elseif strcmp (tipo, 'examen')
+    pulso (1 : N/4) = 1;
+    pulso (N/4 + 1 : end) = 0;
 end;
 
 % cálculo da enerxía
 Ep = sum(pulso.^2);
-Eb = Ep;
+Eb = Ep
 
 % ruido
-EbNo=10^(EbNodB/10);
+EbNo=10^(EbNodB/10)
 ruido=sqrt((Eb/EbNo)/2)*randn(1,N*L);
 
 % modulación
@@ -59,8 +62,8 @@ for k = 1:N:L*N-1
 end;
 
 % probabilidade de erro
-pe_real = mean(bits_rec ~= bits);
-pe_teo = erfc(sqrt(EbNo))/2;
+pe_real = mean(bits_rec ~= bits)
+pe_teo = erfc(sqrt(EbNo))/2
 
 % representación gráfica
 figure(1)

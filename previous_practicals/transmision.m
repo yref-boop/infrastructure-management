@@ -66,8 +66,8 @@ pulso_invertido = pulso (periodo:-1:1);
 
 posicion = 1;
 for k = 1:periodo:longitud*periodo-1
-    convoluted_signal = conv (received_signal (k:k+periodo-1),pulso_invertido);
-    sample_signal = convoluted_signal(periodo);
+    sinal_convolucionada= conv (sinal_recibida(k:k+periodo-1),pulso_invertido);
+    sample_signal = sinal_convolucionada(periodo);
     bits_recibidos(posicion) = sample_signal <= 0;
     posicion = posicion + 1;
 end;
