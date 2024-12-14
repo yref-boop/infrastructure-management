@@ -5,7 +5,9 @@ we are asked to simulate a basic communication system, that should be able to se
 this system should also be able to simulate the effect noise would have on it
 
 this practical is divided in 3 steps
- - implement 2-PAM modulator, functional for any given bits, and represent the output wave
+ - 2-PAM modulator, functional for any given bits, and represent the output wave'
+ - noise simulation and correction
+ - error detection and probability
 
 ### module 2:
 we are asked to design a data processing center, given specified characteristics:
